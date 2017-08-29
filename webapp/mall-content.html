@@ -1,0 +1,163 @@
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>在线预定</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="shortcut icon" href="img/icofont.png" />
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="css/magnific-popup.css"/>
+		<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+		<!--日历控件-->
+		<link rel="stylesheet" type="text/css" href="css/DateTimePicker.css"/>
+		<script src="js/DateTimePicker.js" type="text/javascript" charset="utf-8"></script>
+		
+		<link rel="stylesheet" type="text/css" href="css/main.css"/>
+	</head>
+	<body>
+		<section class="header">
+			<div class="head">
+				<nav class="navbar  wow fadeInDown" id="header-nav">
+				  <div class="">
+				    <!-- Brand and toggle get grouped for better mobile display -->
+				    <div class="navbar-header">
+				      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+				        <span class="sr-only">Toggle navigation</span>
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+				      </button>
+				      <a class="navbar-brand" href="index.html">See Dream</a>
+				    </div>
+				
+				    <!-- Collect the nav links, forms, and other content for toggling -->
+				    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				      <ul class="nav navbar-nav">
+				        <li><a href="main.html">美食资讯</a></li>
+				        <li><a href="#">在线预定</a></li>
+				        <li><a href="FoodDIY.html">美食DIY</a></li>
+				      </ul>
+				      <ul class="nav navbar-nav navbar-right">
+				        <li><a href="login.html">登录</a></li>
+				        <li><a href="register.html">注册</a></li>
+				        <li class="visible-xs"><a href="login.html">个人中心</a></li>
+				        <li class="visible-xs"><a href="register.html">购物车</a></li>
+				      </ul>
+				    </div><!-- /.navbar-collapse -->
+				  </div><!-- /.container-fluid -->
+				</nav>
+			</div>
+		</section>
+		
+		<section class="mall-content">
+			<div class="container">
+				<p>烤生蚝&gt;<span>确认购买</span></p>
+				<div class="row">
+					<div class="col-md-5 col-sm-5 col-xs-12">
+						<div class="mall-content-left">
+							<ul class="mall-list">
+								<li class="mall-list-item">菜品<span>价格/份数</span></li>
+								<li class="mall-list-item">牛肉筋<span>￥3*3</span></li>
+								<li class="mall-list-item">牛肉筋<span>￥3*3</span></li>
+								<li class="mall-list-item">牛肉筋<span>￥3*3</span></li>
+								<li class="mall-list-item">牛肉筋<span>￥3*3</span></li>
+								<li class="mall-list-item">牛肉筋<span>￥3*3</span></li>
+								<li class="mall-list-item">牛肉筋<span>￥3*3</span></li>
+								<li class="mall-list-item">牛肉筋<span>￥3*3</span></li>
+								<li class="mall-list-item">合计<span>￥65</span></li>
+							</ul>
+							<span class="list-san">
+								
+							</span>
+						</div>
+					</div>
+					<div class="col-md-6 col-sm-6 col-xs-12">
+						<div class="mall-content-right">
+							<h4>订餐详情</h4>
+							<form action="" method="post" class="form-horizontal">
+								<div class="form-group">
+									<label class="col-sm-2 col-xs-12 control-label">预计人数</label>
+									<div class="col-sm-10 col-xs-12">
+										<input type="number" class="form-control" />
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-2 col-xs-12 control-label">到达时间</label>
+									<div class="col-sm-10 col-xs-12">
+										<input type="text" data-field="datetime" class="form-control"  onClick="WdatePicker()" />
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-2 col-xs-12 control-label">备注</label>
+									<div class="col-sm-10 col-xs-12">
+										<input type="text" class="form-control" />
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-2 col-xs-12 control-label">付款方式</label>
+									<div class="col-sm-10 col-xs-12">
+										<label class="pay">
+											<input type="radio" name="pay" />
+											<span><img src="img/pay/zhifubao.jpg" /><img src="img/pay/ico-bank-change2.png" class="check"></span>
+										</label>
+										<label class="pay">
+											<input type="radio" name="pay" />
+											<span><img src="img/pay/caifutong.jpg" /><img src="img/pay/ico-bank-change2.png" class="check"></span>
+										</label>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="pull-left">您需支付<span>￥65</span></label>
+									<input type="submit" class="btn btn-default pull-right" value="去付款"/>
+									
+								</div>
+								
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="dtBox"></div>
+		</section>
+		<footer>
+	    	<div class="container">
+	    		<nav>
+					<ul>
+						<li><a href="index.html#myCarousel">主页</a></li>
+						<li><a href="main.html">美食资讯</a></li>
+						<li><a href="mall.html">在线预定</a></li>
+						<li><a href="FoodDIY.html">美食DIY</a></li>
+						<li><a href="login.html">登录</a></li>
+						<li><a href="register.html">注册</a></li>
+					</ul>
+				</nav>
+				<h2>See Dream</h2>
+				<p>电话:1234-1234567&nbsp; &nbsp; 邮箱:royal_zhaoshai@163.com &nbsp; &nbsp; 地址:中国北京 </p>
+				<p>(c) Copyright 2017 赵帅-zs. All Rights Reserved. </p>
+	    	</div>
+	    </footer>
+		<script type="text/javascript">
+		
+			$(document).ready(function()
+			{
+				$("#dtBox").DateTimePicker(
+				{
+					dateFormat: "yyyy-MM-dd",
+					dateTimeFormat: "yyyy-MM-dd HH:mm:ss",
+					timeFormat: "HH:mm",
+					shortDayNames: ["日", "一", "二", "三", "四", "五", "六"],
+					fullDayNames: ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"],
+					shortMonthNames: ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"],
+					fullMonthNames:  ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"],			
+					titleContentDate: "设置日期",
+					titleContentTime: "设置时间",
+					titleContentDateTime: "设置日期和时间",					
+					buttonsToDisplay: ["HeaderCloseButton", "SetButton", "ClearButton"],
+					setButtonContent: "确定",
+					clearButtonContent: "取消"
+				});
+			});
+		
+		</script>
+	</body>
+</html>

@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>SeeDream主页</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="shortcut icon" href="img/icofont.png" />
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="css/magnific-popup.css"/>
+		<link rel="stylesheet" type="text/css" href="css/animate.min.css"/>
+		<link rel="stylesheet" type="text/css" href="css/gallery-1.css"/>
+		<link rel="stylesheet" type="text/css" href="css/font-awesome.css"/>
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+		<script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>		
+		<style>
+			.carousel-fade .carousel-inner .item {
+			  transition-property: opacity;
+			}
+			.carousel-fade .carousel-inner .item,
+			.carousel-fade .carousel-inner .active.left,
+			.carousel-fade .carousel-inner .active.right {
+			  opacity: 0;
+			}
+			.carousel-fade .carousel-inner .active,
+			.carousel-fade .carousel-inner .next.left,
+			.carousel-fade .carousel-inner .prev.right {
+			  opacity: 1;
+			}
+			.carousel-fade .carousel-inner .next,
+			.carousel-fade .carousel-inner .prev,
+			.carousel-fade .carousel-inner .active.left,
+			.carousel-fade .carousel-inner .active.right {
+			  left: 0;
+			  transform: translate3d(0, 0, 0);
+			}
+		</style>
+	</head>
+	<body>
+		<section class="header">
+			<div class="head">
+				<nav class="navbar wow fadeInDown" id="header-nav">
+				  <div class="">
+				    <!-- Brand and toggle get grouped for better mobile display -->
+				    <div class="navbar-header">
+				      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+				        <span class="sr-only">Toggle navigation</span>
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+				      </button>
+				      <a class="navbar-brand" href="#">See Dream</a>
+				    </div>
+				
+				    <!-- Collect the nav links, forms, and other content for toggling -->
+				    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				      <ul class="nav navbar-nav navbar-right">
+				      	<li><a class="scrollto" href="#myCarousel">主页</a></li>
+				        <li><a class="scrollto" href="#about">关于我们</a></li>
+				        <li><a class="scrollto" href="#gallery-1">美食欣赏</a></li>
+				        <li><a class="scrollto" href="#recommond">今日推荐</a></li>
+				        <li><a class="scrollto" href="#price">特价套餐</a></li>
+				       	<li><a class="scrollto" href="#contact">联系我们</a></li>
+				        <li class="dropdown">
+				          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">其它 <span class="caret"></span></a>
+				          <ul class="dropdown-menu">
+				            <li><a href="main.html">美食资讯</a></li>
+				            <li><a href="mall.html">在线预定</a></li>
+				            <li><a href="FoodDIY.html">美食DIY</a></li>
+				          </ul>
+				        </li>
+				      </ul>
+				    </div><!-- /.navbar-collapse -->
+				  </div><!-- /.container-fluid -->
+				</nav>
+			</div>
+			
+			<div class="header-carousel">
+				<div id="myCarousel" class="hero-carousel carousel carousel-fade slide">
+		           
+		            <!-- 轮播（Carousel）项目 -->
+		            <div class="carousel-inner">
+		                <div class="item active">
+		                   <img src="img/banner.jpg" style="width:100%;" alt="First slide">
+		                   <div class="carousel-content">
+			                   	<h1 class="animated fadeInLeft">欢迎来到 <span>SeeDream</span></h1>
+			                 	<a href="#about" class="scrollto"><button class="start animated fadeInRight">Start</button></a>
+		                   </div>
+		                </div>
+		                <div class="item">
+		                   <img src="img/banner2.jpg" style="width:100%;" alt="Second slide">
+		                   <div class="carousel-content">
+			                   	<h1 class="animated fadeInLeft">美酒，美食，美不胜收</h1>
+			                 	<a href="#about" class="scrollto"><button class="start animated fadeInRight">Start</button></a>
+		                   </div>
+		                </div>
+		                <div class="item">
+		                   <img src="img/banner3.jpg" style="width:100%;" alt="Third slide">
+		                   <div class="carousel-content">
+			                   <h1 class="animated fadeInLeft">我们是食物的缔造者</h1>
+			                 	<a href="#about" class="scrollto"><button class="start animated fadeInRight">Start</button></a>
+		                   </div>
+		                </div>
+		            </div>
+		            <!-- 轮播（Carousel）导航 -->
+		            <a class="carousel-control left" href="#myCarousel"
+		               data-slide="prev"></a>
+		            <a class="carousel-control right" href="#myCarousel"
+		               data-slide="next"></a>
+		        </div>
+			</div>
+			<div class="drop-down">
+				<a href="#about" class="scrollto"><span class="glyphicon glyphicon-menu-down"></span></a>
+			</div>
+		</section>
+		
+		<section class="about" id="about">
+			<div class="container">
+				<h2 class="wow fadeInDown">关于我们<br /><span>-------------</span></h2>
+				<div class="row">
+					<div class="col-md-6 col-sm-6 col-xs-12 wow fadeInLeft">
+						<h3>真心出美味，真诚遇顾客</h3>
+						<p>我们本着真心，真诚，真实的原则，对待每一位即将到来的顾客。
+							本公司共。有员 工156人，坐落于风景秀丽的港湾城市，一年四季
+							处节假日外24小时营业，带给您畅爽般的享受，您的需求就是我
+							们的要求，如有意见请在下方留言，真诚的期待您宝贵的意见！
+						</p>
+					</div>
+					<div class="col-md-6 col-sm-6 col-xs-12 wow fadeInRight">
+						<img src="img/img8.jpg" class="img-thumbnail" width="100%" />
+					</div>
+				</div>
+			</div>
+		</section>
+		
+		<section class="team">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4 col-sm-4 col-xs-12 wow flipInY">
+						<div class="team-pic">
+							<img src="img/team/3.jpg"/>
+						</div>
+						<h5>总经理-Mr.王</h5>
+						<p>20xx年入职，具有丰富的餐饮企业管理经验，带给您宾至如归得感觉</p>
+					</div>
+					<div class="col-md-4 col-sm-4 col-xs-12 wow flipInY">
+						<div class="team-pic">
+							<img src="img/team/2.jpg"/>
+						</div>
+						<h5>厨师长-Mr.Davi</h5>
+						<p>20xx年入职，从业18年，每一道菜都用心加工，曾获得20xx届中国好厨师大赛一等奖</p>
+					</div>
+					<div class="col-md-4 col-sm-4 col-xs-12 wow flipInY">
+						<div class="team-pic">
+							<img src="img/team/4.jpg"/>
+						</div>
+						<h5>大堂经理-Mis.liu</h5>
+						<p>20xx年入职，从业10年，具有丰富的接待服务管理经验</p>
+					</div>
+				</div>
+			</div>
+		</section>
+		
+		
+		<section id="gallery-1" class="content-block section-wrapper gallery-1">
+    	 	<div class="container">
+    	 		<h2 class="wow fadeInDown">美食欣赏<br /><span>-------------</span></h2>
+				<div class="editContent wow fadeInDown">
+		            <ul class="filter">
+		                <li class="active"><a href="#" data-filter="*">全部</a></li>
+		                <li><a href="#" data-filter=".sushi">素食</a></li>
+		                <li><a href="#" data-filter=".rou">肉类</a></li>
+		                <li><a href="#" data-filter=".tiandian">甜点</a></li>
+		                <li><a href="#" data-filter=".haixian">海鲜</a></li>
+		            </ul>
+				</div>
+	            <!-- /.gallery-filter -->
+            
+	            <div class="row wow fadeInDown">
+	                <div id="isotope-gallery-container">
+	                    <div class="col-md-4 col-sm-6 col-xs-12 gallery-item-wrapper sushi ">
+	                        <div class="gallery-item">
+	                            <div class="gallery-thumb">
+	                                <img src="img/foods/foodlist1.jpg" class="img-responsive" alt="1st gallery Thumb">
+	                                <div class="image-overlay"></div>
+	                                <a href="img/foods/foodlist1.jpg" class="gallery-zoom"><i class="fa fa-eye"></i></a>
+	                                <a href="#" class="gallery-link"><i class="fa fa-link"></i></a>
+	                            </div>
+	                            <div class="gallery-details">
+	                            	<div class="editContent">
+		                                <h5>香炒西兰花</h5>
+	                            	</div>
+	                            	<div class="editContent">
+		                                <p>轻量、素食、减肥人士的最爱</p>
+	                            	</div>
+	                            </div>
+	                        </div>
+	                    </div>
+	                    <!-- /.gallery-item-wrapper -->
+	                    <div class="col-md-4 col-sm-6 col-xs-12 gallery-item-wrapper rou haixian ">
+	                        <div class="gallery-item">
+	                            <div class="gallery-thumb">
+	                                <img src="img/foods/foodlist3.jpg" class="img-responsive" alt="2nd gallery Thumb">
+	                                <div class="image-overlay"></div>
+	                                <a href="img/foods/foodlist3.jpg" class="gallery-zoom"><i class="fa fa-eye"></i></a>
+	                                <a href="#" class="gallery-link"><i class="fa fa-link"></i></a>
+	                            </div>
+	                            <div class="gallery-details">
+	                            	<div class="editContent">
+	                                	<h5>香炸鱿鱼</h5>
+	                            	</div>
+	                            	<div class="editContent">
+	                                	<p>鱿鱼配啤酒，越吃你越有！</p>
+	                            	</div>
+	                            </div>
+	                        </div>
+	                    </div>
+	                    <!-- /.gallery-item-wrapper -->
+	                    <div class="col-md-4 col-sm-6 col-xs-12 gallery-item-wrapper rou  ">
+	                        <div class="gallery-item">
+	                            <div class="gallery-thumb">
+	                                <img src="img/foods/foodlist4.jpg" class="img-responsive" alt="3rd gallery Thumb">
+	                                <div class="image-overlay"></div>
+	                                <a href="img/foods/foodlist4.jpg" class="gallery-zoom"><i class="fa fa-eye"></i></a>
+	                                <a href="#" class="gallery-link"><i class="fa fa-link"></i></a>
+	                            </div>
+	                            <div class="gallery-details">
+	                            	<div class="editContent">
+	                                	<h5>爆香牛扒</h5>
+	                            	</div>
+	                            	<div class="editContent">
+	                                	<p>一口香嫩，二口唇齿留香</p>
+	                            	</div>
+	                            </div>
+	                        </div>
+	                    </div>
+	                    <!-- /.gallery-item-wrapper -->
+	                    <div class="col-md-4 col-sm-6 col-xs-12 gallery-item-wrapper rou haixian  ">
+	                        <div class="gallery-item">
+	                            <div class="gallery-thumb">
+	                                <img src="img/foods/foodlist5.jpg" class="img-responsive" alt="4th gallery Thumb">
+	                                <div class="image-overlay"></div>
+	                                <a href="img/foods/foodlist5.jpg" class="gallery-zoom"><i class="fa fa-eye"></i></a>
+	                                <a href="#" class="gallery-link"><i class="fa fa-link"></i></a>
+	                            </div>
+	                            <div class="gallery-details">
+	                            	<div class="editContent">
+	                                	<h5>清蒸白虾</h5>
+	                            	</div>
+	                            	<div class="editContent">
+	                                	<p>香嫩的虾肉，丝滑的质感</p>
+	                            	</div>
+	                            </div>
+	                        </div>
+	                    </div>
+	                    <!-- /.gallery-item-wrapper -->
+	                    <div class="col-md-4 col-sm-6 col-xs-12 gallery-item-wrapper tiandian sushi ">
+	                        <div class="gallery-item">
+	                            <div class="gallery-thumb">
+	                                <img src="img/foods/foodlist6.jpg" class="img-responsive" alt="5th gallery Thumb">
+	                                <div class="image-overlay"></div>
+	                                <a href="img/foods/foodlist6.jpg" class="gallery-zoom"><i class="fa fa-eye"></i></a>
+	                                <a href="#" class="gallery-link"><i class="fa fa-link"></i></a>
+	                            </div>
+	                            <div class="gallery-details">
+	                            	<div class="editContent">
+	                                	<h5>香叶紫薯球</h5>
+	                            	</div>
+	                            	<div class="editContent">
+	                                	<p>甜点，甜出新高度</p>
+	                            	</div>
+	                            </div>
+	                        </div>
+	                    </div>
+	                    <!-- /.gallery-item-wrapper -->
+	                    <div class="col-md-4 col-sm-6 col-xs-12 gallery-item-wrapper rou haixian ">
+	                        <div class="gallery-item">
+	                            <div class="gallery-thumb">
+	                                <img src="img/foods/foodlist2.jpg" class="img-responsive" alt="6th gallery Thumb">
+	                                <div class="image-overlay"></div>
+	                                <a href="img/foods/foodlist2.jpg" class="gallery-zoom"><i class="fa fa-eye"></i></a>
+	                                <a href="#" class="gallery-link"><i class="fa fa-link"></i></a>
+	                            </div>
+	                            <div class="gallery-details">
+	                            	<div class="editContent">
+	                                	<h5>四分五裂</h5>
+	                            	</div>
+	                            	<div class="editContent">
+	                                	<p>香滑夫人蟹肉，方便的美食</p>
+	                            	</div>
+	                            </div>
+	                        </div>
+	                    </div>
+	                    
+	                </div>
+	                <!-- /.isotope-gallery-container -->
+	            </div>
+	            <!-- /.row --> 
+	        <!-- /.container -->
+		</div>
+    </section>
+    
+    <section class="recommond" >
+    	<div class="container" id="recommond" >
+    		<h2 class="wow fadeInDown">今日推荐<br /><span>-------------</span></h2>
+			<div class="row" v-for="el in recommond_list">
+				<div class="col-md-6 col-sm-6 col-xs-12 wow fadeInLeft">
+					<img :src="el.img" class="img-thumbnail" width="100%" />
+				</div>
+				<div class="col-md-6 col-sm-6 col-xs-12 wow fadeInRight">
+					
+					<p>今日特别推荐菜品：<h4>{{el.head}}</h4></p>
+					<!--<p>本菜品所有原材料采摘获取时间都不超过一小时，均保留最原始新鲜风味；</p>
+					<p>餐厅最顶级厨师亲自上阵，让你领略真正的人间美味；</p>
+					<p>	鲜辣的汤汁让你欲罢不能，美味的菜肴让你忘乎所以;</p>
+					<p>	我已经迫不及待了，你不想来尝尝嘛？</p>-->
+					<p>{{el.content}}</p>
+					
+					<p>
+						<button class="btn btn-default">在线订购</button>
+					</p>
+				</div>
+			</div>
+    	</div>
+    </section>
+    
+    <section class="price" id="price">
+    	<div class="container">
+    		<h2 class="wow fadeInDown">特价套餐<br /><span>-------------</span></h2>
+    		<div class="row">
+    			<div class="col-md-4 col-sm-4 col-xs-12 wow fadeInDown">
+    				<ul class="list-group">
+    					<li class="list-group-item">
+    						<h4>套餐一</h4>
+    						<h2>￥88<small>/特价</small></h2>
+    					</li>
+    					<li class="list-group-item">干炸黄花鱼/￥26</li>
+    					<li class="list-group-item">西红柿鸡蛋汤/￥20</li>
+    					<li class="list-group-item">糖醋排骨/￥35</li>
+    					<li class="list-group-item">油闷大虾/￥35</li>
+    					<li class="list-group-item">可乐/￥10</li>
+    					<li class="list-group-item">奶茶/￥8</li>
+    					<li class="list-group-item">
+    						<button class="btn btn-default">在线订购</button>
+    					</li>
+    				</ul>
+    			</div>
+    			<div class="col-md-4 col-sm-4 col-xs-12 wow fadeInDown">
+    				<ul class="list-group">
+    					<li class="list-group-item">
+    						<h4>套餐二</h4>
+    						<h2>￥88<small>/特价</small></h2>
+    					</li>
+    					<li class="list-group-item">干炸黄花鱼/￥26</li>
+    					<li class="list-group-item">西红柿鸡蛋汤/￥20</li>
+    					<li class="list-group-item">糖醋排骨/￥35</li>
+    					<li class="list-group-item">油闷大虾/￥35</li>
+    					<li class="list-group-item">可乐/￥10</li>
+    					<li class="list-group-item">奶茶/￥8</li>
+    					<li class="list-group-item">
+    						<button class="btn btn-default">在线订购</button>
+    					</li>
+    				</ul>
+    			</div>
+    			<div class="col-md-4 col-sm-4 col-xs-12 wow fadeInDown">
+    				<ul class="list-group">
+    					<li class="list-group-item">
+    						<h4>套餐三</h4>
+    						<h2>￥88<small>/特价</small></h2>
+    					</li>
+    					<li class="list-group-item">干炸黄花鱼/￥26</li>
+    					<li class="list-group-item">西红柿鸡蛋汤/￥20</li>
+    					<li class="list-group-item">糖醋排骨/￥35</li>
+    					<li class="list-group-item">油闷大虾/￥35</li>
+    					<li class="list-group-item">可乐/￥10</li>
+    					<li class="list-group-item">奶茶/￥8</li>
+    					<li class="list-group-item">
+    						<button class="btn btn-default">在线订购</button>
+    					</li>
+    				</ul>
+    			</div>
+    		</div>
+    	</div>
+    </section>
+    
+    <section class="contact" id="contact">
+    	<div class="container">
+    		<h2 class="wow fadeInDown">联系我们<br /><span>-------------</span></h2>
+    		<div class="row">
+    			<div class="col-md-6 col-sm-6 col-xs-12 wow fadeInLeft">
+    				<form action="" method="post">
+    					<div class="col-md-6 col-sm-6 col-xs-12">
+    						<div class="form-group">
+    							<input type="text" name="user" id="user" value="" class="form-control" placeholder="姓名" />
+    						</div>
+    					</div>
+    					<div class="col-md-6 col-sm-6 col-xs-12">
+    						<div class="form-group">
+    							<input type="email" name="email" id="email" value="" class="form-control" placeholder="邮箱" />
+    						</div>
+    					</div>
+    					<div class="col-md-12 col-sm-12 col-xs-12">
+    						<div class="form-group">
+	    						<input type="text" name="subject" id="subject" value="" class="form-control" placeholder="主题" />
+	    					</div>
+    					</div>
+    					<div class="col-md-12 col-sm-12 col-xs-12">
+    						<div class="form-group">
+	    						<textarea name="content" rows="10" cols="" class="form-control"></textarea>
+	    					</div>
+    					</div>
+    					<div class="col-md-12 col-sm-12 col-xs-12">
+    						<div class="form-group">
+	    						<input type="submit" class="btn-block btn-lg sub" value="提交"/>
+	    					</div>
+    					</div>
+    				</form>
+    			</div>
+    			<div class="col-md-6 col-sm-6 col-xs-12 wow fadeInRight">
+    				<!--百度地图容器-->
+ 					 <div style="width:100%;height:410px;border:#ccc solid 1px;" id="dituContent"></div>
+    			</div>
+    		</div>
+    	</div>
+    </section>
+    
+    <footer>
+    	<div class="container">
+    		<nav class="navLL">
+				<ul>
+					<li v-for="el in nav1_list"><a class="scrollto" :href="el.href">{{el.nav}}</a></li>
+					<!--<li><a class="scrollto" href="#about">关于我们</a></li>
+					<li><a class="scrollto" href="#gallery-1">美食欣赏</a></li>
+					<li><a class="scrollto" href="#recommond">今日推荐</a></li>
+					<li><a class="scrollto" href="#price">特价套餐</a></li>
+					<li><a class="scrollto" href="#contact">联系我们</a></li>-->
+					<li><a href="main.html">美食资讯</a></li>
+					<li><a href="mall.html">在线预定</a></li>
+					<li><a href="FoodDIY.html">美食DIY</a></li>
+				</ul>
+			</nav>
+			<h2>See Dream</h2>
+			<p>电话:1234-1234567&nbsp; &nbsp; 邮箱:royal_zhaoshai@163.com &nbsp; &nbsp; 地址:中国北京 </p>
+			<p>(c) Copyright 2017 赵帅-zs. All Rights Reserved. </p>
+    	</div>
+    </footer>
+   
+    
+    <script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/jquery.isotope.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/jquery.magnific-popup.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/jquery.scrollTo.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/wow.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/main.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" src="js/map.js" ></script>
+    
+    <!--处理数据-->
+    <script type="text/javascript" src="js/date/nav.js" ></script>
+    <script type="text/javascript" src="js/vue.js" ></script>
+    <script src="js/date/recommond.js" type="text/javascript" charset="utf-8"></script>
+    <script>
+    	function _request_nav1(){
+			return nav1;
+		}
+		function _request_recommond(){
+			return recommond;
+		}
+		
+		var _vm1 = new Vue({
+			el:".navLL",
+			data:{
+				nav1_list:_request_nav1()
+			}
+		});
+		var _recommond = new Vue({
+			el:"#recommond",
+			data:{
+				recommond_list:_request_recommond()
+			}
+		});
+
+    </script>
+	</body>
+</html>

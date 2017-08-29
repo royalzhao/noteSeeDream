@@ -1,0 +1,185 @@
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>注册</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="shortcut icon" href="img/icofont.png" />
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="css/main.css"/>
+		<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<section class="header">
+			<div class="head">
+				<nav class="navbar  wow fadeInDown" id="header-nav">
+				  <div class="">
+				    <!-- Brand and toggle get grouped for better mobile display -->
+				    <div class="navbar-header">
+				      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+				        <span class="sr-only">Toggle navigation</span>
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+				      </button>
+				      <a class="navbar-brand" href="index.html">See Dream</a>
+				    </div>
+				
+				    <!-- Collect the nav links, forms, and other content for toggling -->
+				    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				      <ul class="nav navbar-nav">
+				        <li><a href="main.html">美食资讯</a></li>
+				        <li><a href="mall.html">在线预定</a></li>
+				        <li><a href="FoodDIY.html">美食DIY</a></li>
+				      </ul>
+				      <ul class="nav navbar-nav navbar-right">
+				        <li><a href="login.html">登录</a></li>
+				        <li><a href="register.html">注册</a></li>
+				      </ul>
+				    </div><!-- /.navbar-collapse -->
+				  </div><!-- /.container-fluid -->
+				</nav>
+			</div>
+		</section>
+		
+		<section class="login-container">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6 col-sm-6 hidden-12">
+						<div class="img-login">
+							<div class="row">
+								<a href="#" class="col-md-4 col-sm-4 col-xs-6">
+									<span class="icon"></span>
+								</a>
+								<a href="#" class="col-md-4 col-sm-4 col-xs-6">
+									<span class="icon"></span>
+								</a>
+								<a href="#" class="col-md-4 col-sm-4 col-xs-12">
+									<span class="icon"></span>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6 col-sm-6 col-xs-12">
+						<h2>See Dream 注册</h2>
+						<form method="post">
+						    <input type="text" name="account" id="account" class="account" placeholder="用户名">
+						    <div class="alert alert-danger alert-dismissible" role="alert" style="display: none;">
+							 
+							</div>
+						   	<input type="password" name="password" id="password" class="password" placeholder="密码">
+						   	<div class="alert alert-danger alert-dismissible" role="alert" style="display: none;">
+							 
+							</div>
+						   	<input type="password" name="repassword" id="repassword" class="password" placeholder="再次输入密码">
+						   	<div class="alert alert-danger alert-dismissible" role="alert" style="display: none;">
+							 
+							</div>
+							<button class="submit" id="btn" type="button">提交</button>
+							<div class="alert alert-danger alert-dismissible" role="alert" style="display: none;">
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+			
+		</section>
+		
+		<footer>
+	    	<div class="container">
+	    		<nav>
+					<ul>
+						<li><a href="index.html#myCarousel">主页</a></li>
+						<li><a href="main.html">美食资讯</a></li>
+						<li><a href="mall.html">在线预定</a></li>
+						<li><a href="FoodDIY.html">美食DIY</a></li>
+						<li><a href="login.html">登录</a></li>
+						<li><a href="register.html">注册</a></li>
+					</ul>
+				</nav>
+				<h2>See Dream</h2>
+				<p>电话:1234-1234567&nbsp; &nbsp; 邮箱:royal_zhaoshai@163.com &nbsp; &nbsp; 地址:中国北京 </p>
+				<p>(c) Copyright 2017 赵帅-zs. All Rights Reserved. </p>
+	    	</div>
+	    </footer>
+		
+		<script src="js/date/user.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/register_check.js" type="text/javascript" charset="utf-8"></script>
+
+		<script type="text/javascript">
+		
+		$(function(){
+			
+			$("#account").on('blur',function(){
+				var ac = _checkAccount();
+				if(ac){
+					$.ajax({
+						url:'checkUser',
+						data:{
+							account:$('#account').val()   
+						},
+						type:'post',
+						dataType:'JSON',
+						success:function(data){
+							console.log(data.message)
+							if(data.message == 'ok'){
+								$('.alert').eq(0).css('display','none');
+								$('.alert').eq(0).html('');
+							}else{
+								$('.alert').eq(0).css('display','block');
+								$('.alert').eq(0).html('用户名已存在！');
+							}
+						}
+					});
+				}
+				
+			});
+
+			$("#password").on('blur',function(){
+				_checkPass()
+			})
+
+			$("#repassword").on('blur',function(){
+				_checkRePass()
+			})
+			
+			$("#btn").click(function(){
+				var a = _checkAccount();
+				var b = _checkPass();
+				var c = _checkRePass();
+				if(a && b && c){
+					// location.href="login.html";
+					// $('.alert').eq(3).css('display','none');
+					$.ajax({
+                        url:'register',
+                        data:{
+							account:$('#account').val(),
+							password:$('#password').val(),
+						},
+                        type:'post',
+                        dataType:'JSON',
+                        success:function(data){
+                            if(data.message == 'ok'){
+                                location.href="login.html";
+                            }
+                        },
+                        error:function(status){
+                            console.log(status)
+                            alert('错误');
+                        }
+
+                    })
+				}
+				
+			})
+		})
+			
+			
+
+			
+			
+	  		
+	  
+	  </script>
+	</body>
+</html>

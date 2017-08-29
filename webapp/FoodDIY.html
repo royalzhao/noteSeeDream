@@ -1,0 +1,289 @@
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>美食DIY</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="shortcut icon" href="img/icofont.png" />
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="css/main.css"/>
+		<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/handlebars-v4.0.10.js" type="text/javascript" charset="utf-8" ></script>
+	</head>
+	<body>
+		<div id="DIY">
+		<section class="header">
+			<div class="head">
+				<nav class="navbar  wow fadeInDown" id="header-nav">
+				  <div class="">
+				    <!-- Brand and toggle get grouped for better mobile display -->
+				    <div class="navbar-header">
+				      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+				        <span class="sr-only">Toggle navigation</span>
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+				      </button>
+				      <a class="navbar-brand" href="index.html">See Dream</a>
+				    </div>
+				
+				    <!-- Collect the nav links, forms, and other content for toggling -->
+				    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				      <ul class="nav navbar-nav">
+				        <li><a href="main.html">美食资讯</a></li>
+				        <li><a href="mall.html">在线预定</a></li>
+				        <li><a href="FoodDIY.html">美食DIY</a></li>
+				      </ul>
+				      <ul class="nav navbar-nav navbar-right">
+				        <li><a href="login.html">登录</a></li>
+				        <li><a href="register.html">注册</a></li>
+				      </ul>
+				    </div><!-- /.navbar-collapse -->
+				  </div><!-- /.container-fluid -->
+				</nav>
+			</div>
+		</section>
+		
+		<section class="main-container">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-8 col-sm-8 col-xs-12">
+						<div class="search">
+							<div class="input-group">
+						      	<input type="search" class="form-control" id="search-input-x" placeholder="搜索">
+						      	<div class="input-group-addon search-button-x"><span class="glyphicon glyphicon-search"></span></div>
+						    </div>
+						</div>
+						<script id="template" type="text/x-handlebars-template">
+							{{#each foodDIY}}
+								<li>
+									<div class="row">
+										<div class="col-md-4 col-sm-4 col-xs-12">
+											<div>
+												<img src="{{img}}"/>
+											</div>
+										</div>
+										<div class="col-md-8 col-sm-8 col-xs-12">
+											<a href="FoodDIY-content.html?id={{id}}"><h4>{{title}}</h4></a>
+											<p>{{abstract}}</p>
+											<span>发布日期：{{putDate}}</span><span>浏览：{{see}}</span><span>作者：{{author}}</span>
+										</div>
+									</div>
+								</li>
+							{{/each}}
+						</script>
+						
+						<ul id="foodDIY-list">
+							
+						</ul>
+						<nav>
+						  	<ul class="pagination">
+								<li>
+									<a href="#" aria-label="Previous">
+										<span aria-hidden="true">&laquo;</span>
+									</a>
+								</li>
+								<li>
+									<a href="#">1</a>
+								</li>
+								<li>
+									<a href="#">2</a>
+								</li>
+								<li>
+									<a href="#">3</a>
+								</li>
+								<li>
+									<a href="#">4</a>
+								</li>
+								<li>
+									<a href="#">5</a>
+								</li>
+								<li>
+									<a href="#" aria-label="Next">
+										<span aria-hidden="true">&raquo;</span>
+									</a>
+								</li>
+							</ul>
+						</nav>
+					</div>
+					<div class="col-md-4 col-sm-4 col-xs-12">
+						<div class="search">
+							<div class="input-group">
+						      	<input type="search" class="form-control" id="search-input-l" placeholder="搜索">
+						      	<div class="input-group-addon search-button-l"><span class="glyphicon glyphicon-search"></span></div>
+						    </div>
+						</div>
+						<div class="hot-news">
+							<div class="hot-news-head">
+								<h4>评分最高</h4>
+							</div>
+							<script id="hot-DIY-template" type="text/x-handlebars-template">
+							
+								<!--遍历news  -->
+								{{#each foodDIY}}
+									<li><a href="FoodDIY-content.html?id={{id}}">{{title}}</a><span>{{{star}}}</span></li>
+								{{/each}}
+							</script>
+							<ul id="hot-DIY-content">
+								<!-- <li><a href="#">文章1</a><span><i class="glyphicon glyphicon-star"></i><i class="glyphicon glyphicon-star"></i><i class="glyphicon glyphicon-star"></i><i class="glyphicon glyphicon-star"></i><i class="glyphicon glyphicon-star"></i></span></li> -->
+								
+							</ul>
+						</div>	
+						<div class="new-news">
+							<div class="new-news-head">
+								<h4>最新DIY</h4>
+							</div>
+							<script id="new-DIY-template" type="text/x-handlebars-template">
+								<!--遍历news  -->
+								{{#each foodDIY}}
+									<li><a href="FoodDIY-content.html?id={{id}}">{{title}}</a><span>({{putDate}})</span></li>
+									
+								{{/each}}
+							</script>
+							<ul id="new-DIY-content">
+								
+							</ul>
+						</div>	
+						<div class="active-news">
+							<div class="active-news-head">
+								<h4>近期活动</h4>
+							</div>
+							<div id="myCarousel" class="carousel slide">
+								<ol class="carousel-indicators">
+									<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+									<li data-target="#myCarousel" data-slide-to="1"></li>
+									<li data-target="#myCarousel" data-slide-to="2"></li>
+								</ol>
+								<div class="carousel-inner">
+									<div class="item active">
+										<img src="img/foods/foodlist2.jpg" alt="第一张">
+									</div>
+									<div class="item">
+										<img src="img/foods/foodlist3.jpg" alt="第二张">
+									</div>
+									<div class="item">
+										<img src="img/foods/foodlist4.jpg" alt="第三张">
+									</div>
+								</div>
+								<a href="#myCarousel" data-slide="prev" class="carousel-control
+														left">&lsaquo;</a>
+								<a href="#myCarousel" data-slide="next" class="carousel-control
+														right">&rsaquo;</a>
+							</div>
+						</div>	
+						
+					</div>
+				</div>
+			</div>
+			
+		</section>
+		
+		<footer>
+	    	<div class="container">
+	    		<nav>
+					<ul>
+						<li><a href="index.html#myCarousel">主页</a></li>
+						<li><a href="main.html">美食资讯</a></li>
+						<li><a href="mall.html">在线预定</a></li>
+						<li><a href="FoodDIY.html">美食DIY</a></li>
+						<li><a href="login.html">登录</a></li>
+						<li><a href="register.html">注册</a></li>
+					</ul>
+				</nav>
+				<h2>See Dream</h2>
+				<p>电话:1234-1234567&nbsp; &nbsp; 邮箱:royal_zhaoshai@163.com &nbsp; &nbsp; 地址:中国北京 </p>
+				<p>(c) Copyright 2017 赵帅-zs. All Rights Reserved. </p>
+	    	</div>
+	    </footer>
+		</div>
+		
+		
+		<!-- <script src="js/date/foodDIY.js" type="text/javascript" charset="utf-8"></script> -->
+		<script>
+			// function _request_foodDIY(){
+			// 	return foodDIY;
+			// }
+			$(function(){
+				$.ajax({
+					url:'diy',
+					data:{
+			
+					},
+					type:'post',
+					success:function(data){
+						var templateScript = $('#template').html();
+						var hotDIYtemplateScript = $('#hot-DIY-template').html();
+						var newDIYtemplateScript = $('#new-DIY-template').html();
+
+						var template = Handlebars.compile(templateScript);
+						var hotDIYtemplate = Handlebars.compile(hotDIYtemplateScript);
+						var newDIYtemplate = Handlebars.compile(newDIYtemplateScript);
+						
+						var context = {
+							foodDIY:data
+						}
+						
+						var compiledHtml = template(context);
+						var hotDIYcompiledHtml = hotDIYtemplate(context);
+						var newDIYcompiledHtml = newDIYtemplate(context);
+						
+						$('#foodDIY-list').append(compiledHtml);
+						$('#hot-DIY-content').append(hotDIYcompiledHtml);
+						$('#new-DIY-content').append(newDIYcompiledHtml);
+						
+						$('#myCarousel').carousel({
+							//设置自动播放/2 秒
+							interval : 3000,
+						});
+					},
+					error:function(){
+						console.log('网络错误');
+					}
+				})
+
+				//页面查询
+				function mouse(id,href){
+					var searchValue = $(id).val();
+					var data = {
+						"searchValue":searchValue
+					};
+					var newsearchValue = JSON.stringify(data);
+					localStorage.setItem('foodkey',newsearchValue);
+					location.href = href;
+				}
+				function keyDown(id,href){
+					var searchValue = $(id).val();
+					var data = {
+						"searchValue":searchValue
+					};
+					var newsearchValue = JSON.stringify(data);
+					localStorage.setItem('foodkey',newsearchValue);
+					location.href = href;
+				}
+
+				$('.search-button-l').click(function(){
+					mouse("#search-input-l","FoodDIY-search.html");
+				});
+				
+				$('#search-input-l').bind('keydown',function(e){
+					if(e.which == 13){
+						mouse("#search-input-l","FoodDIY-search.html");
+					}
+				})
+
+				$('.search-button-x').click(function(){
+					mouse("#search-input-x","FoodDIY-search.html");
+				})
+
+				$('#search-input-x').bind('keydown',function(e){
+					if(e.which == 13){
+						mouse("#search-input-x","FoodDIY-search.html");
+					}
+				})
+
+			})
+			
+			
+		</script>
+	</body>
+</html>
