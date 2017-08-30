@@ -24,6 +24,12 @@ app.use('/', mainRouter);
 const diyRouter = require('./router/diyRouter');
 app.use('/', diyRouter);
 
+const chartsRouter = require('./router/chartsRouter');
+app.use('/', chartsRouter);
+
+const mallRouter = require('./router/mallRouter');
+app.use('/', mallRouter);
+
 
 app.listen(80);
 

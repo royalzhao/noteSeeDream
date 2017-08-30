@@ -9,7 +9,7 @@
 		<link rel="stylesheet" type="text/css" href="css/main.css"/>
 		<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
-		
+		<script src="js/handlebars-v4.0.10.js" type="text/javascript" charset="utf-8" ></script>
 	</head>
 	<body>
 		<section class="header">
@@ -50,142 +50,22 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-8 col-sm-8 col-xs-12 left">
-						<ul class="ul-content">
-							<li>
-								<div class="mall-list-img">
-									<a href="img/foods/foodlist1.jpg">
-										<img src="img/foods/foodlist1.jpg" />
-									</a>
-								</div>
-								<div class="mall-list-head">
-									<h4>西兰花</h4>
-									<h4><a class="buy"><span class="glyphicon glyphicon-shopping-cart"></span></a></h4>
-								</div>
-								
-							</li>
-							
-							<li>
-								<div class="mall-list-img">
-									<a href="img/foods/foodlist1.jpg">
-										<img src="img/foods/foodlist1.jpg" />
-									</a>
-								</div>
-								<div class="mall-list-head">
-									<h4>西兰花</h4>
-									<h4><a class="buy"><span class="glyphicon glyphicon-shopping-cart"></span></a></h4>
-								</div>
-							</li>
-							<li>
-								<div class="mall-list-img">
-									<a href="img/foods/foodlist1.jpg">
-										<img src="img/foods/foodlist1.jpg" />
-									</a>
-								</div>
-								<div class="mall-list-head">
-									<h4>西兰花</h4>
-									<h4><a class="buy"><span class="glyphicon glyphicon-shopping-cart"></span></a></h4>
-								</div>
-							</li>
-							<li>
-								<div class="mall-list-img">
-									<a href="img/foods/foodlist1.jpg">
-										<img src="img/foods/foodlist1.jpg" />
-									</a>
-								</div>
-								<div class="mall-list-head">
-									<h4>西兰花</h4>
-									<h4><a class="buy"><span class="glyphicon glyphicon-shopping-cart"></span></a></h4>
-								</div>
-							</li>
-							<li>
-								<div class="mall-list-img">
-									<a href="img/foods/foodlist2.jpg">
-										<img src="img/foods/foodlist2.jpg" />
-									</a>
-								</div>
-								<div class="mall-list-head">
-									<h4>西兰花</h4>
-									<h4><a class="buy"><span class="glyphicon glyphicon-shopping-cart"></span></a></h4>
-								</div>
-							</li>
-							<li>
-								<div class="mall-list-img">
-									<a href="img/foods/foodlist2.jpg">
-										<img src="img/foods/foodlist2.jpg" />
-									</a>
-								</div>
-								<div class="mall-list-head">
-									<h4>西兰花</h4>
-									<h4><a class="buy"><span class="glyphicon glyphicon-shopping-cart"></span></a></h4>
-								</div>
-							</li>
-							<li>
-								<div class="mall-list-img">
-									<a href="img/foods/foodlist2.jpg">
-										<img src="img/foods/foodlist2.jpg" />
-									</a>
-								</div>
-								<div class="mall-list-head">
-									<h4>西兰花</h4>
-									<h4><a class="buy"><span class="glyphicon glyphicon-shopping-cart"></span></a></h4>
-								</div>
-							</li>
-							<li>
-								<div class="mall-list-img">
-									<a href="img/foods/foodlist2.jpg">
-										<img src="img/foods/foodlist2.jpg" />
-									</a>
-								</div>
-								<div class="mall-list-head">
-									<h4>西兰花</h4>
-									<h4><a class="buy"><span class="glyphicon glyphicon-shopping-cart"></span></a></h4>
-								</div>
-							</li>
-							<li>
-								<div class="mall-list-img">
-									<a href="img/foods/foodlist3.jpg">
-										<img src="img/foods/foodlist3.jpg" />
-									</a>
-								</div>
-								<div class="mall-list-head">
-									<h4>西兰花</h4>
-									<h4><a class="buy"><span class="glyphicon glyphicon-shopping-cart"></span></a></h4>
-								</div>
-							</li>
-							<li>
-								<div class="mall-list-img">
-									<a href="img/foods/foodlist3.jpg">
-										<img src="img/foods/foodlist3.jpg" />
-									</a>
-								</div>
-								<div class="mall-list-head">
-									<h4>西兰花</h4>
-									<h4><a class="buy"><span class="glyphicon glyphicon-shopping-cart"></span></a></h4>
-								</div>
-							</li>
-							<li>
-								<div class="mall-list-img">
-									<a href="img/foods/foodlist3.jpg">
-										<img src="img/foods/foodlist3.jpg" />
-									</a>
-								</div>
-								<div class="mall-list-head">
-									<h4>西兰花</h4>
-									<h4><a class="buy"><span class="glyphicon glyphicon-shopping-cart"></span></a></h4>
-								</div>
-							</li>
-							<li>
-								<div class="mall-list-img">
-									<a href="img/foods/foodlist3.jpg">
-										<img src="img/foods/foodlist3.jpg" />
-									</a>
-								</div>
-								<div class="mall-list-head">
-									<h4>西兰花</h4>
-									<h4><a class="buy"><span class="glyphicon glyphicon-shopping-cart"></span></a></h4>
-								</div>
-							</li>
-							
+						<ul class="ul-content" id="ul-content">
+							<script id="example-template" type="text/x-handlebars-template">
+								{{#each news}}
+								<li>
+									<div class="mall-list-img">
+										<a href="{{img}}">
+											<img src="{{img}}" />
+										</a>
+									</div>
+									<div class="mall-list-head">
+										<h4>{{name}}</h4>
+										<h4><a class="buy"><span class="glyphicon glyphicon-shopping-cart"></span></a></h4>
+									</div>
+								</li>
+								{{/each}}
+							</script>
 						</ul>
 						<nav>
 						  	<ul class="pagination">
@@ -437,16 +317,41 @@
 				$('.shopCar').click(function(){
 					$('.mall-list').toggleClass('active');
 				})
-				$('.mall-list-img').magnificPopup({ 
-					delegate: 'a', type: 'image'
-				});
 				
-//				var arr = [];
-//				$('.buy').click(function(){
-//					var goodsName = $('.buy').parent().prev().html();
-//					arr.push(goodsName);
-//					console.log(arr);
-//				});
+				$.ajax({
+					url:'mall',
+					data:{
+			
+					},
+					type:'post',
+					success:function(data){
+						//获取模板数据
+						var theTemplateScript = $('#example-template').html();
+						
+						//Handlebars.compile编译模板
+						var theTemplate = Handlebars.compile(theTemplateScript);
+						
+						//定义数据
+						var context = {
+							news:data,
+						};
+						
+						//把数据传送到模板
+						var theCompiledHtml = theTemplate(context);
+						
+						//更新到模板
+						$("#ul-content").append(theCompiledHtml);
+
+						$('.mall-list-img').magnificPopup({ 
+							delegate: 'a', type: 'image'
+						});
+						
+					},
+					error:function(){
+						console.log("网络错误");
+					}
+				 })
+
 				
 				
 			})
