@@ -61,7 +61,7 @@
 									</div>
 									<div class="mall-list-head">
 										<h4>{{name}}</h4>
-										<h4><a class="buy"><span class="glyphicon glyphicon-shopping-cart"></span></a></h4>
+										<h4 class="buy"><a><span class="glyphicon glyphicon-shopping-cart"></span></a></h4>
 									</div>
 								</li>
 								{{/each}}
@@ -278,13 +278,9 @@
 				<li>
 					<a href="#" class="shopCar"><span class="glyphicon glyphicon-shopping-cart"></span></a>
 					<div class="mall-list active">
-						<ul>
-							<li>红烧排骨<span>x1</span><span class="del glyphicon glyphicon-remove"></span></li>
-							<li>红焖鱼<span>x1</span><span class="del glyphicon glyphicon-remove"></span></li>
-							<li>红烧排骨<span>x1</span><span class="del glyphicon glyphicon-remove"></span></li>
-							<li>红焖鱼<span>x1</span><span class="del glyphicon glyphicon-remove"></span></li>
-							<li>红烧排骨<span>x1</span><span class="del glyphicon glyphicon-remove"></span></li>
-							<li>红焖鱼<span>x1</span><span class="del glyphicon glyphicon-remove"></span></li>
+						<ul class="mall-list-item">
+							<li>红烧排骨<span>x1</span><span class="del glyphicon glyphicon-remove remove-item"></span></li>
+							
 						</ul>
 						<a href="mall-content.html"><button class="btn btn-default">去下单</button></a>
 					</div>
@@ -345,6 +341,26 @@
 						$('.mall-list-img').magnificPopup({ 
 							delegate: 'a', type: 'image'
 						});
+						
+						var arr = [];
+						
+
+						$(".buy").click(function(){
+							var name = $(this).prev().text();
+							$(".mall-list-item").append('<li>'+name+'<span>x1</span><span class="del glyphicon glyphicon-remove remove-item"></span></li>')
+							$(".remove-item").each(function(){
+								$(this).click(function(){
+									$(this).parent().remove();
+								}) 
+							})
+
+							
+						})
+						$(".remove-item").each(function(){
+							$(this).click(function(){
+								$(this).parent().remove();
+							})
+						})
 						
 					},
 					error:function(){

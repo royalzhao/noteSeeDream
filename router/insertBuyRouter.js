@@ -6,9 +6,9 @@ const mysql = require('../util/mysql');
 const router = express.Router()
 
 // 路由把客户端请求的url和处理方法连接起来
-router.route('/mall').post(function (req, res) {
-  let sql =  `select * from mall`;
- // param = [req.body.account,req.body.password];
+router.route('/buy').post(function (req, res) {
+  let sql =  `insert into buy_list(name,num) values (?,?)`;
+  param = [req.body.name,req.body.num];
   
   mysql.pool.getConnection(function (error, connection) {
     if (error) {
@@ -17,14 +17,14 @@ router.route('/mall').post(function (req, res) {
     }
     connection.query({
       sql: sql,
-      //values: param
+      values: param
     }, function (error, data) {
       connection.release()
       if (error) {
         console.log({messsage: 'ERROR'})
         return
       }
-      //console.log(data)
+      console.log(data)
       res.send(data);
     })
   })

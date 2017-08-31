@@ -30,6 +30,9 @@ app.use('/', chartsRouter);
 const mallRouter = require('./router/mallRouter');
 app.use('/', mallRouter);
 
+const insertBuyRouter = require('./router/insertBuyRouter');
+app.use('/', insertBuyRouter);
+
 
 app.listen(80);
 

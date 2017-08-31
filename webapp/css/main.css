@@ -471,6 +471,7 @@ footer p{
 .mall-container .container .row .left .ul-content li .mall-list-head h4:nth-of-type(2){
 	color: #EC971F;
 	display: none;
+	cursor: pointer;
 }
 .mall-container .container .row .left .ul-content li .mall-list-head h4:nth-of-type(2) a{
 	color: #EC971F;
@@ -484,6 +485,7 @@ footer p{
 .mall-container .container .row .left .ul-content li:hover .mall-list-head h4:nth-of-type(2){
 	display: block;
 }
+
 .mall-container .container .row div:nth-of-type(2){
 	background: #FFFFFF;
 }
