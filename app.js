@@ -34,6 +34,9 @@ const insertBuyRouter = require('./router/insertBuyRouter');
 app.use('/', insertBuyRouter);
 
 
+
+
+
 app.listen(80);
 
 console.log('服务器启动，端口：80');

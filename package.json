@@ -22,6 +22,7 @@
     "mysql2": "^1.2.0",
     "node-xlsx": "^0.7.4",
     "sequelize": "^3.30.4",
+    "silly-datetime": "^0.1.2",
     "tracer": "^0.8.9"
   }
 }
