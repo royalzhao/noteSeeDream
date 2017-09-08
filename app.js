@@ -78,5 +78,5 @@ app.use('/', insertBuyRouter);
 
 app.listen(8080);
 
-console.log('服务器启动，端口：80');
+console.log('服务器启动，端口：8080');
 console.log('静态文件位置：' + _static);
