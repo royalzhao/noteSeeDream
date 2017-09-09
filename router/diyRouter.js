@@ -165,9 +165,13 @@ router.route('/searchDiy').post(function (req, res) {
 //路由把客户端请求的url和处理方法连接起来
 router.route('/diyfenye').post(function (req, res) {
   console.log(req.body);
-  let sql =  `select * from news limit ? , ? `;
-  let offset = (req.body.curr-1)*req.body.limit;
+  let sql =  `select * from diy limit ? , ? `;
   let limit = parseInt(req.body.limit);
+  var curr = parseInt(req.body.curr);
+  if(curr <= 0){
+    curr = 1;
+  }
+  let offset = (curr-1)*limit;
   param = [offset,limit];
   mysql.pool.getConnection(function (error, connection) {
     if (error) {

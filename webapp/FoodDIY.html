@@ -78,31 +78,7 @@
 						</ul>
 						<nav>
 						  	<ul class="pagination">
-								<li>
-									<a href="#" aria-label="Previous">
-										<span aria-hidden="true">&laquo;</span>
-									</a>
-								</li>
-								<li>
-									<a href="#">1</a>
-								</li>
-								<li>
-									<a href="#">2</a>
-								</li>
-								<li>
-									<a href="#">3</a>
-								</li>
-								<li>
-									<a href="#">4</a>
-								</li>
-								<li>
-									<a href="#">5</a>
-								</li>
-								<li>
-									<a href="#" aria-label="Next">
-										<span aria-hidden="true">&raquo;</span>
-									</a>
-								</li>
+								
 							</ul>
 						</nav>
 					</div>
@@ -211,11 +187,58 @@
 					},
 					type:'post',
 					success:function(data){
-						var templateScript = $('#template').html();
+						var pageSize = 2;	//每页显示数量
+						var page = Math.ceil(data.length/pageSize); //页数  
+						//console.log(page);
+						var prev = '<li><a href="javascript:;" class="prev" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>';
+						var next = '<li><a href="javascript:;" class="next" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>'
+						var pageContent='';
+							
+						for(var i = 1;i<=page;i++){
+							pageContent += '<li><a href="FoodDIY.html?page='+i+'">'+i+'</a></li>';
+							//console.log(pageContent)
+						}
+						$('.pagination').append(prev+pageContent+next);
+						var a = location.search.split('?');
+						var b = a[1].split('=');
+						if(b[1]){
+							fenyeAjax(b[1],pageSize);
+						}
+						$('.pagination li a').click(function(){
+							if( !isNaN($(this).text())){
+								fenyeAjax($(this).text(),pageSize);
+							}else{
+								if($(this).hasClass('prev')){
+									//从地址栏获取page参数
+									var a = location.search.split('?');
+									var b = a[1].split('=');
+									fenyeAjax(b[1]-1,pageSize);
+									if((b[1]-1)<=0){
+										location.href = 'FoodDIY.html?page='+1;
+									}else{
+										location.href = 'FoodDIY.html?page='+(b[1]-1);
+									}
+									
+								}else{
+									//从地址栏获取page参数
+									var a = location.search.split('?');
+									var b = a[1].split('=');
+									fenyeAjax(parseInt(b[1])+1,pageSize);
+									if((parseInt(b[1])+1)>page){
+										location.href = 'FoodDIY.html?page='+page;
+									}else{
+										location.href = 'FoodDIY.html?page='+(parseInt(b[1])+1);
+									}
+									
+								}
+							}
+						})
+						
+						//侧边栏页面渲染
+						
 						var hotDIYtemplateScript = $('#hot-DIY-template').html();
 						var newDIYtemplateScript = $('#new-DIY-template').html();
 
-						var template = Handlebars.compile(templateScript);
 						var hotDIYtemplate = Handlebars.compile(hotDIYtemplateScript);
 						var newDIYtemplate = Handlebars.compile(newDIYtemplateScript);
 						
@@ -223,11 +246,9 @@
 							foodDIY:data
 						}
 						
-						var compiledHtml = template(context);
 						var hotDIYcompiledHtml = hotDIYtemplate(context);
 						var newDIYcompiledHtml = newDIYtemplate(context);
 						
-						$('#foodDIY-list').append(compiledHtml);
 						$('#hot-DIY-content').append(hotDIYcompiledHtml);
 						$('#new-DIY-content').append(newDIYcompiledHtml);
 						
@@ -240,6 +261,29 @@
 						console.log('网络错误');
 					}
 				})
+				//分页ajax
+				function fenyeAjax(curr,limit){
+					$.ajax({
+						url:'/diyfenye',
+						data:{
+							curr:curr,
+							limit:limit
+						},
+						type:'post',
+						success:function(data){
+							var templateScript = $('#template').html();
+							var template = Handlebars.compile(templateScript);
+							var context = {
+								foodDIY:data
+							}
+							var compiledHtml = template(context);
+							$('#foodDIY-list').append(compiledHtml);
+						},
+						error:function(){
+							console.log('网络错误');
+						}
+					})
+				}
 
 				//页面查询
 				function mouse(id,href){

@@ -83,31 +83,7 @@
 						
 						<nav>
 						  	<ul class="pagination">
-								<li>
-									<a href="#" aria-label="Previous">
-										<span aria-hidden="true">&laquo;</span>
-									</a>
-								</li>
-								<li>
-									<a href="#">1</a>
-								</li>
-								<li>
-									<a href="#">2</a>
-								</li>
-								<li>
-									<a href="#">3</a>
-								</li>
-								<li>
-									<a href="#">4</a>
-								</li>
-								<li>
-									<a href="#">5</a>
-								</li>
-								<li>
-									<a href="#" aria-label="Next">
-										<span aria-hidden="true">&raquo;</span>
-									</a>
-								</li>
+								
 							</ul>
 						</nav>
 					</div>
@@ -206,11 +182,8 @@
 	    </div>
 		
 		
-		<!-- <script src="js/date/mainNews.js" type="text/javascript" charset="utf-8"></script> -->
 		<script>
-			// function _request_main_news(){
-			// 	return mainNews;
-			// }
+			
 			 $(function(){
 				 $.ajax({
 					url:'main',
@@ -219,12 +192,65 @@
 					},
 					type:'post',
 					success:function(data){
+
+						var pageSize = 2;	//每页显示数量
+						var page = Math.ceil(data.length/pageSize); //页数  
+						//console.log(page);
+						var prev = '<li><a href="javascript:;" class="prev" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>';
+						var next = '<li><a href="javascript:;" class="next" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>'
+						var pageContent='';
+							
+						for(var i = 1;i<=page;i++){
+							pageContent += '<li><a href="main.html?page='+i+'">'+i+'</a></li>';
+							//console.log(pageContent)
+						}
+						$('.pagination').append(prev+pageContent+next);
+						var a = location.search.split('?');
+						var b = a[1].split('=');
+						if(b[1]){
+							fenyeAjax(b[1],pageSize);
+						}
+						$('.pagination li a').click(function(){
+							//alert($(this).text())
+							if( !isNaN($(this).text())){
+								//alert($(this).text())
+								fenyeAjax($(this).text(),pageSize);
+							}else{
+								if($(this).hasClass('prev')){
+									//从地址栏获取page参数
+									var a = location.search.split('?');
+									var b = a[1].split('=');
+									fenyeAjax(b[1]-1,pageSize);
+									if((b[1]-1)<=0){
+										location.href = 'main.html?page='+1;
+									}else{
+										location.href = 'main.html?page='+(b[1]-1);
+									}
+									
+								}else{
+									//从地址栏获取page参数
+									var a = location.search.split('?');
+									var b = a[1].split('=');
+									fenyeAjax(parseInt(b[1])+1,pageSize);
+									if((parseInt(b[1])+1)>page){
+										location.href = 'main.html?page='+page;
+									}else{
+										location.href = 'main.html?page='+(parseInt(b[1])+1);
+									}
+									
+								}
+							}
+						})
+						
+
+						
+
 						//获取模板数据
-						var theTemplateScript = $('#example-template').html();
+						
 						var NewsHotTemplateScript =  $('#news-hot-template').html();
 						var NewsArticleTemplateScript = $('#news-article-template').html();
 						//Handlebars.compile编译模板
-						var theTemplate = Handlebars.compile(theTemplateScript);
+						
 						var NewsHotTemplate = Handlebars.compile(NewsHotTemplateScript);
 						var NewsArticleTemplate = Handlebars.compile(NewsArticleTemplateScript);
 						//定义数据
@@ -233,11 +259,11 @@
 						};
 						
 						//把数据传送到模板
-						var theCompiledHtml = theTemplate(context);
+						
 						var HotNewsCompiledHtml = NewsHotTemplate(context);
 						var NewsArticleCompiledHtml = NewsArticleTemplate(context);
 						//更新到模板
-						$("#main-list").append(theCompiledHtml);
+						
 						$("#news-hot").append(HotNewsCompiledHtml);
 						$("#news-article").append(NewsArticleCompiledHtml);
 						
@@ -247,7 +273,29 @@
 							interval : 3000,
 						});
 
-
+						//分页ajax
+						function fenyeAjax(curr,limit){
+							$.ajax({
+								url:'/mainfenye',
+								data:{
+									curr:curr,
+									limit:limit
+								},
+								type:'post',
+								success:function(data){
+									var theTemplateScript = $('#example-template').html();
+									var theTemplate = Handlebars.compile(theTemplateScript);
+									var context = {
+										news:data,
+									};
+									var theCompiledHtml = theTemplate(context);
+									$("#main-list").html(theCompiledHtml);
+								},
+								error:function(){
+									console.log('网络错误');
+								}
+							})
+						}
 						//页面查询
 						function mouse(id,href){
 							var searchValue = $(id).val();
