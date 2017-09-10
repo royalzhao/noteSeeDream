@@ -200,10 +200,15 @@
 						}
 						$('.pagination').append(prev+pageContent+next);
 						var a = location.search.split('?');
-						var b = a[1].split('=');
-						if(b[1]){
-							fenyeAjax(b[1],pageSize);
+						if(a[1]){
+							var b = a[1].split('=');
 						}
+						if(a[1]){
+							fenyeAjax(b[1],pageSize);
+						}else{
+							fenyeAjax(1,pageSize);
+						}
+						
 						$('.pagination li a').click(function(){
 							if( !isNaN($(this).text())){
 								fenyeAjax($(this).text(),pageSize);
