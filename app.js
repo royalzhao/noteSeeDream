@@ -36,7 +36,7 @@ var storage = multer.diskStorage({
 var upload = multer({ storage: storage })  
 // 单图上传 
 app.post('/upload', upload.single('img'), function(req, res, next){
-   // console.log(req.body)     
+    console.log(req.body)     
     var file = req.file;     
    // var name=file.filename; 
     res.send({name:file.filename})
