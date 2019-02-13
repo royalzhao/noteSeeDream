@@ -1,2 +1,2 @@
-# noteSeeDream
-基于Note.js为后台的完整美食网站
+# nodeSeeDream
+基于Node.js为后台的完整美食网站
